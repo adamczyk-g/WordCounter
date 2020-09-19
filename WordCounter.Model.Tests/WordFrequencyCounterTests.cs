@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
 using System;
+using System.Text.RegularExpressions;
 
 namespace WordCounter.Model.Tests
 {
@@ -81,7 +82,7 @@ namespace WordCounter.Model.Tests
 
         private string RemoveUnwantedCharacters(string text)
         {
-            return System.Text.RegularExpressions.Regex.Replace(text, "[^A-Za-z\r\n ]", "").ToLower();
+            return Regex.Replace(text, "[^A-Za-z\r\n ]", "").ToLower();
         }
     }
 }
