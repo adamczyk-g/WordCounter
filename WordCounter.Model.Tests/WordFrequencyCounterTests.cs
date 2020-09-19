@@ -55,6 +55,18 @@ namespace WordCounter.Model.Tests
 
             CollectionAssert.AreEqual(expected, output);
         }
+
+        [Test]
+        public void Word_repeats_()
+        {
+            WordFrequencyCounter wordCounter = new WordFrequencyCounter();
+            Dictionary<string, int> expected = new Dictionary<string, int> { { "firstword", 2 }, { "secondword", 1 } };
+            string input = "firstword secondword firstword";
+
+            Dictionary<string, int> output = wordCounter.CountFrequency(input);
+
+            CollectionAssert.AreEqual(expected, output);
+        }
     }
 
     public class WordFrequencyCounter
