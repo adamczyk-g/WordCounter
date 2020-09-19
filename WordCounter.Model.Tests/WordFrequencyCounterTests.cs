@@ -65,5 +65,18 @@ namespace WordCounter.Model.Tests
 
             CollectionAssert.AreEqual(expected, output);
         }
+
+        [Test]
+        public void Total_words_count()
+        {
+            WordFrequencyCounter wordCounter = new WordFrequencyCounter();
+            int expected = 3;
+            string input = "firstword secondword firstword";
+
+            wordCounter.CountFrequency(input);
+            int output = wordCounter.TotalWords;
+
+            Assert.AreEqual(expected, output);
+        }
     }    
 }
