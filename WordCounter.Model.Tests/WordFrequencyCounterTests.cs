@@ -20,7 +20,7 @@ namespace WordCounter.Model.Tests
         }
 
         [Test]
-        public void One_word_on_input_is_one_word_in_output()
+        public void One_word_on_input_is_one_word_on_output()
         {
             WordFrequencyCounter wordCounter = new WordFrequencyCounter();
             Dictionary<string, int> expected = new Dictionary<string, int> { { "oneword", 1 } };
@@ -32,11 +32,23 @@ namespace WordCounter.Model.Tests
         }
 
         [Test]
-        public void Two_word_on_input_is_two_word_in_output()
+        public void Two_word_on_input_is_two_word_on_output()
         {
             WordFrequencyCounter wordCounter = new WordFrequencyCounter();
             Dictionary<string, int> expected = new Dictionary<string, int> { { "firstword", 1 }, { "secondword", 1 } };
             string input = "firstword secondword";
+
+            Dictionary<string, int> output = wordCounter.CountFrequency(input);
+
+            CollectionAssert.AreEqual(expected, output);
+        }
+
+        [Test]
+        public void Remove_unwanted_characters_from_input()
+        {
+            WordFrequencyCounter wordCounter = new WordFrequencyCounter();
+            Dictionary<string, int> expected = new Dictionary<string, int> { { "oneword", 1 } };
+            string input = "`1234567890 -=[]; '\\,./~!@#$%^&*()_+{}:\"||<>?OneWord";
 
             Dictionary<string, int> output = wordCounter.CountFrequency(input);
 
@@ -51,7 +63,7 @@ namespace WordCounter.Model.Tests
         public Dictionary<string, int> CountFrequency(string text)
         {
             Dictionary<string, int> wordFrequency = new Dictionary<string, int>();
-            List<string> words = SplitTextToWords(text);
+            List<string> words = SplitTextToWords(RemoveUnwantedCharacters(text));
 
             foreach (string word in words)
             {
@@ -65,6 +77,11 @@ namespace WordCounter.Model.Tests
         private List<string> SplitTextToWords(string text)
         {
             return new List<string>(text.Split(new string[] { " ", "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries));
+        }
+
+        private string RemoveUnwantedCharacters(string text)
+        {
+            return System.Text.RegularExpressions.Regex.Replace(text, "[^A-Za-z\r\n ]", "").ToLower();
         }
     }
 }
