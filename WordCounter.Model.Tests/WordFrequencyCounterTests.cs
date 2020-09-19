@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using System;
 
 namespace WordCounter.Model.Tests
 {
@@ -10,40 +11,49 @@ namespace WordCounter.Model.Tests
         public void Empty_input_string_return_an_empty_list()
         {
             WordFrequencyCounter wordCounter = new WordFrequencyCounter();
-            IEnumerable<WordFrequency> expected = new List<WordFrequency>();
+            Dictionary<string, int> expected = new Dictionary<string, int>();
             string input = string.Empty;
 
-            IEnumerable< WordFrequency> output = wordCounter.CountFrequency(input);            
+            Dictionary<string, int> output = wordCounter.CountFrequency(input);
 
             CollectionAssert.AreEqual(expected, output);
         }
 
-        public class WordFrequency
+        [Test]
+        public void One_word_on_input_is_one_word_in_output()
         {
-            public WordFrequency(string word, int count)
-            {
-                Word = word;
-                Count = count;
-            }
+            WordFrequencyCounter wordCounter = new WordFrequencyCounter();
+            Dictionary<string, int> expected = new Dictionary<string, int> { { "oneword", 1 } };
+            string input = "oneword";
 
-            public string Word { get; }
+            Dictionary<string, int> output = wordCounter.CountFrequency(input);
 
-            public int Count { get; }
-
-            public override string ToString()
-            {
-                return Word + ", " + Count;
-            }
+            CollectionAssert.AreEqual(expected, output);
         }
 
-        public class WordFrequencyCounter
-        {
-            public WordFrequencyCounter() { }
+    }
 
-            public IEnumerable <WordFrequency> CountFrequency(string text)
+    public class WordFrequencyCounter
+    {
+        public WordFrequencyCounter() { }
+
+        public Dictionary<string, int> CountFrequency(string text)
+        {
+            Dictionary<string, int> wordFrequency = new Dictionary<string, int>();
+            List<string> words = SplitTextToWords(text);
+
+            foreach (string word in words)
             {
-                return new List<WordFrequency>();
+                if (!wordFrequency.ContainsKey(word))
+                    wordFrequency.Add(word, words.FindAll(x => word == x).Count);
             }
+
+            return wordFrequency;
+        }
+
+        private List<string> SplitTextToWords(string text)
+        {
+            return new List<string>(text.Split(new string[] { " ", "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries));
         }
     }
 }
