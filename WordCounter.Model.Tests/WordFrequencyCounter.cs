@@ -6,16 +6,18 @@ namespace WordCounter.Model.Tests
 {
     public class WordFrequencyCounter
     {
-        private int totalWords;
+        private List<string> words;
+        private Dictionary<string, int> wordFrequency;
 
-        public WordFrequencyCounter() { }
+        public WordFrequencyCounter()
+        {
+            words = new List<string>();
+            wordFrequency = new Dictionary<string, int>();
+        }
 
         public Dictionary<string, int> CountFrequency(string text)
-        {
-            Dictionary<string, int> wordFrequency = new Dictionary<string, int>();
-            List<string> words = SplitTextToWords(RemoveUnwantedCharacters(text));
-
-            totalWords = words.Count;
+        {            
+            words = SplitTextToWords(RemoveUnwantedCharacters(text));
 
             foreach (string word in words)
             {
@@ -26,7 +28,9 @@ namespace WordCounter.Model.Tests
             return wordFrequency;
         }
 
-        public int TotalWords => totalWords;
+        public int TotalWords { get { return words.Count; } }
+
+        public int TotalUniqueWords { get { return wordFrequency.Count; } }
 
         private List<string> SplitTextToWords(string text)
         {
