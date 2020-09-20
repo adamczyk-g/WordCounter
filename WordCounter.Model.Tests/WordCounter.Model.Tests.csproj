@@ -40,7 +40,6 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WordFrequencyCounter.cs" />
     <Compile Include="WordFrequencyCounterTests.cs" />
   </ItemGroup>
   <ItemGroup>
