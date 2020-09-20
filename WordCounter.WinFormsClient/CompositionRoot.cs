@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WordCounter.WinFormsClient.Views
+namespace WordCounter.WinFormsClient
 {
     public class CompositionRoot
     {

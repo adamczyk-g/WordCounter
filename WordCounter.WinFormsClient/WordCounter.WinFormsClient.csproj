@@ -86,8 +86,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TextInputView.resx">
+      <DependentUpon>TextInputView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ToolbarView.resx">
       <DependentUpon>ToolbarView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WordCounterView.resx">
+      <DependentUpon>WordCounterView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

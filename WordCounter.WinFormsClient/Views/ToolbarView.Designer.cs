@@ -1,4 +1,4 @@
-﻿namespace WordCounter.WinFormsClient.Views.Views
+﻿namespace WordCounter.WinFormsClient.Views
 {
     partial class ToolbarView
     {
