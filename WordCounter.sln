@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter.Model", "WordCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter.WinFormsClient", "WordCounter.WinFormsClient\WordCounter.WinFormsClient.csproj", "{18695688-3823-4B10-AE5D-2B4E5D9A2E90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter.Presentation", "WordCounter.Presentation\WordCounter.Presentation.csproj", "{DA08F79D-FE35-4C80-83B0-C585E23E7E14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{18695688-3823-4B10-AE5D-2B4E5D9A2E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18695688-3823-4B10-AE5D-2B4E5D9A2E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18695688-3823-4B10-AE5D-2B4E5D9A2E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA08F79D-FE35-4C80-83B0-C585E23E7E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA08F79D-FE35-4C80-83B0-C585E23E7E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA08F79D-FE35-4C80-83B0-C585E23E7E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA08F79D-FE35-4C80-83B0-C585E23E7E14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
