@@ -78,5 +78,18 @@ namespace WordCounter.Model.Tests
 
             Assert.AreEqual(expected, output);
         }
+
+        [Test]
+        public void Total_unique_words_count()
+        {
+            WordFrequencyCounter wordCounter = new WordFrequencyCounter();
+            int expected = 3;
+            string input = "firstword secondword firstword thirdword secondword";
+
+            wordCounter.CountFrequency(input);
+            int output = wordCounter.TotalUniqueWords;
+
+            Assert.AreEqual(expected, output);
+        }
     }    
 }
