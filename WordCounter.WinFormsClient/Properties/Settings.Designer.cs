@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WordCounter.WinFormsClient.Properties
+namespace WordCounter.WinFormsClient.Views.Properties
 {
 
 

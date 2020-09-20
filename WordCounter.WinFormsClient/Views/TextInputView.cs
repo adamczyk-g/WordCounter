@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WordCounter.WinFormsClient
+namespace WordCounter.WinFormsClient.Views.Views
 {
-    public partial class WordCounterView : Form
+    public partial class TextInputView : Form
     {
-        public WordCounterView()
+        public TextInputView()
         {
             InitializeComponent();
         }

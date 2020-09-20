@@ -1,4 +1,4 @@
-﻿namespace WordCounter.WinFormsClient
+﻿namespace WordCounter.WinFormsClient.Views.Views
 {
     partial class ToolbarView
     {
@@ -33,9 +33,10 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 131);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 

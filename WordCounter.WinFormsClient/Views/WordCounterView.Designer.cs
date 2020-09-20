@@ -1,6 +1,6 @@
-﻿namespace WordCounter.WinFormsClient
+﻿namespace WordCounter.WinFormsClient.Views.Views
 {
-    partial class MainView
+    partial class WordCounterView
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "MainView";
+            this.Text = "WordCounterView";
         }
 
         #endregion

@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WordCounter.Presentation
+namespace WordCounter.WinFormsClient.Views.Interfaces
 {
-    public class MainPresenter
+    public interface ITextInputView
     {
-        //private readonly ITextInputView textInputView;
-
     }
 }

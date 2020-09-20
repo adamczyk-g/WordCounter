@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WordCounter.WinFormsClient.Properties
+namespace WordCounter.WinFormsClient.Views.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace WordCounter.WinFormsClient.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WordCounter.WinFormsClient.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("namespace WordCounter.WinFormsClient.Views.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using WordCounter.CompositionRoot;
 
-namespace WordCounter.WinFormsClient
+namespace WordCounter.WinFormsClient.Views
 {
     static class Program
     {
