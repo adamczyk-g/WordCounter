@@ -40,11 +40,16 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WordFrequencyCounter.cs" />
     <Compile Include="WordFrequencyCounterTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WordCounter.Model\WordCounter.Model.csproj">
+      <Project>{03baa602-d3f3-4eb8-87db-5d4270411639}</Project>
+      <Name>WordCounter.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
