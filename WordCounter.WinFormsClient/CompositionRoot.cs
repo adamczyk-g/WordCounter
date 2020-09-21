@@ -28,6 +28,12 @@ namespace WordCounter.WinFormsClient
             MainModel mainModel = new MainModel();
             MainPresenter mainPresenter = new MainPresenter(mainView, mainModel);
 
+            TextInputModel textInputModel = new TextInputModel();
+            TextInputPresenter textInputPresenter = new TextInputPresenter(textInputView, textInputModel);
+
+            WordCounterModel wordCounterModel = new WordCounterModel();
+            WordCounterPresenter wordCounterPresenter = new WordCounterPresenter(wordCounterView, wordCounterModel);
+
             return mainPresenter;
         }
     }

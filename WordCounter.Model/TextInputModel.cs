@@ -9,5 +9,11 @@ namespace WordCounter.Model
 {
     public class TextInputModel: ITextInputModel
     {
+        public TextInputModel()
+        {
+
+        }
+
+
     }
 }
