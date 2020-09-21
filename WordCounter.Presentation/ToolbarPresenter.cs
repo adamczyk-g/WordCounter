@@ -12,7 +12,12 @@ namespace WordCounter.Presentation
     {
         public ToolbarPresenter(IToolbarView toolbarView , IToolbarModel toolbarModel)
         {
+            toolbarView.ButtonRunClick += ButtonRunClick;
+        }
 
+        private void ButtonRunClick(object sender, EventArgs e)
+        {
+            var x = 1;
         }
 
     }

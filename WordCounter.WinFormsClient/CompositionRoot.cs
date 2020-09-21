@@ -24,15 +24,18 @@ namespace WordCounter.WinFormsClient
             WordCounterView wordCounterView = new WordCounterView();
             StatusBarView statusBarView = new StatusBarView();
 
-            MainView mainView = new MainView(toolbarView, textInputView, wordCounterView, statusBarView);
-            MainModel mainModel = new MainModel();
-            MainPresenter mainPresenter = new MainPresenter(mainView, mainModel);
+            ToolbarModel toolbarModel = new ToolbarModel();
+            ToolbarPresenter toolbarPresenter = new ToolbarPresenter(toolbarView, toolbarModel);
 
             TextInputModel textInputModel = new TextInputModel();
             TextInputPresenter textInputPresenter = new TextInputPresenter(textInputView, textInputModel);
 
             WordCounterModel wordCounterModel = new WordCounterModel();
             WordCounterPresenter wordCounterPresenter = new WordCounterPresenter(wordCounterView, wordCounterModel);
+
+            MainView mainView = new MainView(toolbarView, textInputView, wordCounterView, statusBarView);
+            MainModel mainModel = new MainModel();
+            MainPresenter mainPresenter = new MainPresenter(mainView, mainModel);
 
             return mainPresenter;
         }
