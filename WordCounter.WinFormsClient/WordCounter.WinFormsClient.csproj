@@ -128,7 +128,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\outline_folder_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kspread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_play_arrow_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_info_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_login_black_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

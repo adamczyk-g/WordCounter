@@ -35,7 +35,7 @@ namespace WordCounter.WinFormsClient.Views
             ((Form)toolbarView).Dock = DockStyle.Fill;
             panel1.Controls.Add((Form)toolbarView);
 
-            panel1.Height = 128;
+            panel1.Height = 96;
             splitContainer1.BringToFront();
 
             ((Form)statusbarView).TopLevel = false;
