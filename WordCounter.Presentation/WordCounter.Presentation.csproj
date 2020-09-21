@@ -43,9 +43,11 @@
   <ItemGroup>
     <Compile Include="MainPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatusbarPresenter.cs" />
     <Compile Include="TextInputPresenter.cs" />
     <Compile Include="ToolbarPresenter.cs" />
     <Compile Include="ViewInterfaces\IMainView.cs" />
+    <Compile Include="ViewInterfaces\IStatusBarView.cs" />
     <Compile Include="ViewInterfaces\ITextInputView.cs" />
     <Compile Include="ViewInterfaces\IToolbarView.cs" />
     <Compile Include="ViewInterfaces\IWordCounterView.cs" />
