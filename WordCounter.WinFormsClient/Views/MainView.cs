@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WordCounter.WinFormsClient.Interfaces;
+using WordCounter.Presentation.ViewInterfaces;
 
 namespace WordCounter.WinFormsClient.Views
 {
@@ -16,6 +16,11 @@ namespace WordCounter.WinFormsClient.Views
         public MainView(IToolbarView toolbarView, ITextInputView textInputView, IWordCounterView wordCounterView)
         {
             InitializeComponent();
+
+            ((Form)textInputView).TopLevel = false;
+            ((Form)textInputView).FormBorderStyle = FormBorderStyle.None;
+            ((Form)textInputView).Show();
+            splitContainer1.Panel1.Controls.Add((Form)textInputView);
         }
     }
 }

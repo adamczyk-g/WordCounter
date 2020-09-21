@@ -40,6 +40,10 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewInterfaces\IMainView.cs" />
+    <Compile Include="ViewInterfaces\ITextInputView.cs" />
+    <Compile Include="ViewInterfaces\IToolbarView.cs" />
+    <Compile Include="ViewInterfaces\IWordCounterView.cs" />
     <Compile Include="TestClass.cs" />
   </ItemGroup>
   <ItemGroup>

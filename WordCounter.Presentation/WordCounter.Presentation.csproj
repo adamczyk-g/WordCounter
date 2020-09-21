@@ -45,7 +45,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextInputPresenter.cs" />
     <Compile Include="ToolbarPresenter.cs" />
+    <Compile Include="ViewInterfaces\IMainView.cs" />
+    <Compile Include="ViewInterfaces\ITextInputView.cs" />
+    <Compile Include="ViewInterfaces\IToolbarView.cs" />
+    <Compile Include="ViewInterfaces\IWordCounterView.cs" />
     <Compile Include="WordCounterPresenter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WordCounter.Model\WordCounter.Model.csproj">
+      <Project>{ccd4f212-dc58-49f4-9649-76ac0dd603a4}</Project>
+      <Name>WordCounter.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

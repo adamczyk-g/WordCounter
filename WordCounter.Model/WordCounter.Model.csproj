@@ -42,7 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainModel.cs" />
+    <Compile Include="ModelInterfaces\IMainModel.cs" />
+    <Compile Include="ModelInterfaces\ITextInputModel.cs" />
+    <Compile Include="ModelInterfaces\IToolbarModel.cs" />
+    <Compile Include="ModelInterfaces\IWordCounterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextInputModel.cs" />
+    <Compile Include="ToolbarModel.cs" />
+    <Compile Include="WordCounterModel.cs" />
     <Compile Include="WordFrequencyCounter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

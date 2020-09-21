@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WordCounter.WinFormsClient.Interfaces
+namespace WordCounter.Presentation.ViewInterfaces
 {
-    public interface ITextInputView
+    public interface IToolbarView
     {
     }
 }

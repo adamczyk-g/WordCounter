@@ -47,10 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositionRoot.cs" />
-    <Compile Include="Interfaces\IMainView.cs" />
-    <Compile Include="Interfaces\ITextInputView.cs" />
-    <Compile Include="Interfaces\IToolbarView.cs" />
-    <Compile Include="Interfaces\IWordCounterView.cs" />
     <Compile Include="Views\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +107,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WordCounter.Model\WordCounter.Model.csproj">
+      <Project>{ccd4f212-dc58-49f4-9649-76ac0dd603a4}</Project>
+      <Name>WordCounter.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WordCounter.Presentation\WordCounter.Presentation.csproj">
+      <Project>{da08f79d-fe35-4c80-83b0-c585e23e7e14}</Project>
+      <Name>WordCounter.Presentation</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
