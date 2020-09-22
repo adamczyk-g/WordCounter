@@ -12,13 +12,30 @@ namespace WordCounter.Presentation
     {
         public ToolbarPresenter(IToolbarView toolbarView , IToolbarModel toolbarModel)
         {
+            toolbarView.ButtonOpenFileClick += ButtonOpenFileClick;
             toolbarView.ButtonRunClick += ButtonRunClick;
+            toolbarView.ButtonInfoClick += ButtonInfoClick;
+            toolbarView.ButtonExitClick += ButtonExitClick;
+        }
+
+        private void ButtonOpenFileClick(object sender, EventArgs e)
+        {
+            toolbarModel.OpenFile();
         }
 
         private void ButtonRunClick(object sender, EventArgs e)
         {
-            var x = 1;
+
         }
 
+        private void ButtonInfoClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonExitClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

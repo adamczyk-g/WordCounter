@@ -9,5 +9,8 @@ namespace WordCounter.Presentation.ViewInterfaces
     public interface IToolbarView
     {
         event EventHandler ButtonRunClick;
+        event EventHandler ButtonOpenFileClick;
+        event EventHandler ButtonInfoClick;
+        event EventHandler ButtonExitClick;
     }
 }
