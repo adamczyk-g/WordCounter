@@ -8,5 +8,9 @@ namespace WordCounter.Model.ModelInterfaces
 {
     public interface IToolbarModel
     {
+        event EventHandler ButtonRunClick;
+        event EventHandler ButtonOpenFileClick;
+        event EventHandler ButtonInfoClick;
+        event EventHandler ButtonExitClick;
     }
 }

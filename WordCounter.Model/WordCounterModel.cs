@@ -9,5 +9,6 @@ namespace WordCounter.Model
 {
     public class WordCounterModel: IWordCounterModel
     {
+        //CountWord();
     }
 }

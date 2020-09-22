@@ -7,7 +7,21 @@ using WordCounter.Model.ModelInterfaces;
 
 namespace WordCounter.Model
 {
-    public class ToolbarModel: IToolbarModel
+    public class ToolbarModel : IToolbarModel
     {
+        public event EventHandler ButtonRunClick;
+        public event EventHandler ButtonOpenFileClick;
+        public event EventHandler ButtonInfoClick;
+        public event EventHandler ButtonExitClick;
+
+        ToolbarModel() {  }
+
+        public void OpenFile() => ButtonOpenFileClick.Invoke(this, null);
+
+        public void Run() =>  ButtonRunClick.Invoke(this, null);
+
+        public void Info() => ButtonInfoClick.Invoke(this, null);
+
+        public void Exit() => ButtonExitClick.Invoke(this, null);
     }
 }
