@@ -14,7 +14,7 @@ namespace WordCounter.Model
         public event EventHandler ButtonInfoClick;
         public event EventHandler ButtonExitClick;
 
-        ToolbarModel() {  }
+        public ToolbarModel() {  }
 
         public void OpenFile() => ButtonOpenFileClick.Invoke(this, null);
 

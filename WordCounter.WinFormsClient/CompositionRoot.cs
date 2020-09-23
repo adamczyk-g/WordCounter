@@ -30,13 +30,16 @@ namespace WordCounter.WinFormsClient
             TextInputModel textInputModel = new TextInputModel();
             TextInputPresenter textInputPresenter = new TextInputPresenter(textInputView, textInputModel);
 
-            WordCounterModel wordCounterModel = new WordCounterModel();
+            WordFrequencyCounter wordFrequencyCounter= new WordFrequencyCounter();
+            WordCounterModel wordCounterModel = new WordCounterModel(wordFrequencyCounter);
             WordCounterPresenter wordCounterPresenter = new WordCounterPresenter(wordCounterView, wordCounterModel);
 
             MainView mainView = new MainView(toolbarView, textInputView, wordCounterView, statusBarView);
             MainModel mainModel = new MainModel();
             MainPresenter mainPresenter = new MainPresenter(mainView, mainModel);
 
+            RunButtonNavigator navigation = new RunButtonNavigator(toolbarView, wordCounterModel);
+            ModelConnector modelConnector = new ModelConnector(toolbarModel, wordCounterModel, textInputModel);
             return mainPresenter;
         }
     }

@@ -9,11 +9,15 @@ namespace WordCounter.Model
 {
     public class TextInputModel: ITextInputModel
     {
+        private string text;
+
         public TextInputModel()
         {
-
+            text = string.Empty;
         }
 
+        public string Text { get { return text; } set { text = value; TextInputDataChange?.Invoke(this, null); } }
 
+        public event EventHandler TextInputDataChange;
     }
 }

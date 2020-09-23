@@ -12,5 +12,10 @@ namespace WordCounter.Model.ModelInterfaces
         event EventHandler ButtonOpenFileClick;
         event EventHandler ButtonInfoClick;
         event EventHandler ButtonExitClick;
+
+        void OpenFile();
+        void Run();
+        void Info();
+        void Exit();
     }
 }

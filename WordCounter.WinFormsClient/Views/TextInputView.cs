@@ -17,5 +17,12 @@ namespace WordCounter.WinFormsClient.Views
         {
             InitializeComponent();
         }
+
+        public event EventHandler TextInputChanged { add { this.richTextBox1.TextChanged += new System.EventHandler(value); } remove { this.richTextBox1.TextChanged -= new System.EventHandler(value); } }
+
+        public string GetText()
+        {
+            return richTextBox1.Text;
+        }
     }
 }

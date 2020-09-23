@@ -10,9 +10,22 @@ namespace WordCounter.Presentation
 {
     public class TextInputPresenter
     {
+        private ITextInputView textInputView;
+        private ITextInputModel textInputModel;
+
         public TextInputPresenter(ITextInputView textInputView, ITextInputModel textInputModel)
         {
+            this.textInputView = textInputView;
+            this.textInputModel = textInputModel;
 
+            textInputView.TextInputChanged += OnTextChanged;
         }
+
+        private void OnTextChanged(object obj, EventArgs e)
+        {
+            textInputModel.Text = textInputView.GetText();
+        }
+
+
     }
 }

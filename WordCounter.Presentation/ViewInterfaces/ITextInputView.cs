@@ -8,5 +8,7 @@ namespace WordCounter.Presentation.ViewInterfaces
 {
     public interface ITextInputView
     {
+        string GetText();
+        event EventHandler TextInputChanged;
     }
 }

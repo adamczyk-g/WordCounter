@@ -29,7 +29,7 @@ namespace WordCounter.Presentation
 
         private void ButtonRunClick(object sender, EventArgs e)
         {
-            
+            toolbarModel.Run();
         }
 
         private void ButtonInfoClick(object sender, EventArgs e)

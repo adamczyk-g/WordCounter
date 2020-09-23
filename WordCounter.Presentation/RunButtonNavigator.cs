@@ -8,11 +8,11 @@ using WordCounter.Model.ModelInterfaces;
 
 namespace WordCounter.Presentation
 {
-    public class Navigation
+    public class RunButtonNavigator
     {
         private readonly IWordCounterModel wordCounterModel;
 
-        public Navigation(IToolbarView toolbarView, IWordCounterModel wordCounterModel)
+        public RunButtonNavigator(IToolbarView toolbarView, IWordCounterModel wordCounterModel)
         {
             toolbarView.ButtonRunClick += OnRunClick;
 
@@ -21,7 +21,7 @@ namespace WordCounter.Presentation
 
         private void OnRunClick(object obj, EventArgs e)
         {
-            wordCounterModel.
+            wordCounterModel.CountWord();
         }
     }
 }

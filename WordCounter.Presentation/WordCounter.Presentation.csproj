@@ -42,7 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainPresenter.cs" />
-    <Compile Include="Navigation.cs" />
+    <Compile Include="ModelConnector.cs" />
+    <Compile Include="RunButtonNavigator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatusbarPresenter.cs" />
     <Compile Include="TextInputPresenter.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="ViewInterfaces\ITextInputView.cs" />
     <Compile Include="ViewInterfaces\IToolbarView.cs" />
     <Compile Include="ViewInterfaces\IWordCounterView.cs" />
+    <Compile Include="ViewInterfaces\WordCounterListItem.cs" />
     <Compile Include="WordCounterPresenter.cs" />
   </ItemGroup>
   <ItemGroup>

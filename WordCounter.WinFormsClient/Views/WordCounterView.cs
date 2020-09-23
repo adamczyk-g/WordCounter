@@ -17,5 +17,10 @@ namespace WordCounter.WinFormsClient.Views
         {
             InitializeComponent();
         }
+
+        public void SetWordCounterListData(List<WordCounterListItem> listData)
+        {
+            dataGridView1.DataSource = listData;
+        }
     }
 }
