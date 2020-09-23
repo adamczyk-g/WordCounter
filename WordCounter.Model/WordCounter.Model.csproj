@@ -45,6 +45,7 @@
     <Compile Include="MainModel.cs" />
     <Compile Include="ModelInterfaces\IMainModel.cs" />
     <Compile Include="ModelInterfaces\ITextInputModel.cs" />
+    <Compile Include="ModelInterfaces\ITextProvider.cs" />
     <Compile Include="ModelInterfaces\IToolbarModel.cs" />
     <Compile Include="ModelInterfaces\IWordCounterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
