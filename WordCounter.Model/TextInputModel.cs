@@ -16,7 +16,7 @@ namespace WordCounter.Model
             text = string.Empty;
         }
 
-        public string Text { get { return text; } set { text = value; TextInputDataChange?.Invoke(this, null); } }
+        public string Text { get { return text; } set { text = value; TextInputDataChange?.Invoke(this, EventArgs.Empty); } }
 
         public event EventHandler TextInputDataChange;
     }
