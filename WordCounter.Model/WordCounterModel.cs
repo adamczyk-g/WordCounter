@@ -30,7 +30,7 @@ namespace WordCounter.Model
             this.text = text;
         }
 
-        public Dictionary<string, int> WordCounterData { get { return wordCounterData; } private set { wordCounterData = value;  WordCounterDataChange.Invoke(this, null); } }
+        public Dictionary<string, int> WordCounterData { get { return wordCounterData; } private set { wordCounterData = value;  WordCounterDataChange.Invoke(this, EventArgs.Empty); } }
 
         public event EventHandler WordCounterDataChange;
     }
