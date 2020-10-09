@@ -22,5 +22,11 @@ namespace WordCounter.WinFormsClient.Views
         {
             dataGridView1.DataSource = listData;
         }
+
+        public void WordCounterListClear()
+        {
+            dataGridView1.DataSource = new List<string>();
+            dataGridView1.Refresh();
+        }
     }
 }

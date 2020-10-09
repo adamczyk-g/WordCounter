@@ -16,7 +16,9 @@ namespace WordCounter.Model
         }
 
         public Dictionary<string, int> CountFrequency(string text)
-        {            
+        {
+            wordFrequency.Clear();
+
             words = SplitTextToWords(RemoveUnwantedCharacters(text));
 
             foreach (string word in words)
