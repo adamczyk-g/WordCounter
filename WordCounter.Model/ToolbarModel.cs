@@ -11,7 +11,7 @@ namespace WordCounter.Model
     {
         public event EventHandler ButtonRunClick;
         public event EventHandler ButtonOpenFileClick;
-        public event EventHandler ButtonInfoClick;
+        public event EventHandler ButtonAboutClick;
         public event EventHandler ButtonExitClick;
 
         public ToolbarModel() {  }
@@ -20,7 +20,7 @@ namespace WordCounter.Model
 
         public void Run() =>  ButtonRunClick.Invoke(this, null);
 
-        public void Info() => ButtonInfoClick.Invoke(this, null);
+        public void About() => ButtonAboutClick.Invoke(this, null);
 
         public void Exit() => ButtonExitClick.Invoke(this, null);
     }

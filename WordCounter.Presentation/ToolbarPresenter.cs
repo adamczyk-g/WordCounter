@@ -16,7 +16,7 @@ namespace WordCounter.Presentation
         {
             toolbarView.ButtonOpenFileClick += ButtonOpenFileClick;
             toolbarView.ButtonRunClick += ButtonRunClick;
-            toolbarView.ButtonInfoClick += ButtonInfoClick;
+            //toolbarView.ButtonAboutClick += ButtonAboutClick;
             toolbarView.ButtonExitClick += ButtonExitClick;
 
             this.toolbarModel = toolbarModel;
@@ -32,9 +32,9 @@ namespace WordCounter.Presentation
             toolbarModel.Run();
         }
 
-        private void ButtonInfoClick(object sender, EventArgs e)
+        private void ButtonAboutClick(object sender, EventArgs e)
         {
-
+            //toolbarModel.About();
         }
 
         private void ButtonExitClick(object sender, EventArgs e)

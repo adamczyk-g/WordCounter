@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutModel.cs" />
     <Compile Include="MainModel.cs" />
+    <Compile Include="ModelInterfaces\IAboutModel.cs" />
     <Compile Include="ModelInterfaces\IMainModel.cs" />
     <Compile Include="ModelInterfaces\ITextInputModel.cs" />
     <Compile Include="ModelInterfaces\ITextProvider.cs" />

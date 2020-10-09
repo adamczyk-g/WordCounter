@@ -10,7 +10,7 @@ namespace WordCounter.Presentation.ViewInterfaces
     {
         event EventHandler ButtonRunClick;
         event EventHandler ButtonOpenFileClick;
-        event EventHandler ButtonInfoClick;
+        event EventHandler ButtonAboutClick;
         event EventHandler ButtonExitClick;
     }
 }

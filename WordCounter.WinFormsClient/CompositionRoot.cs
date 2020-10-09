@@ -38,7 +38,12 @@ namespace WordCounter.WinFormsClient
             MainModel mainModel = new MainModel();
             MainPresenter mainPresenter = new MainPresenter(mainView, mainModel);
 
+            AboutView aboutView = new AboutView();
+            AboutModel aboutModel = new AboutModel();
+            AboutPresenter aboutPresenter = new AboutPresenter(aboutView, aboutModel);
+
             RunButtonNavigator navigation = new RunButtonNavigator(toolbarView, wordCounterModel);
+            AboutButtonNavigator aboutButtonNavigator = new AboutButtonNavigator(toolbarView, aboutView);
             ModelConnector modelConnector = new ModelConnector(toolbarModel, wordCounterModel, textInputModel);
             return mainPresenter;
         }

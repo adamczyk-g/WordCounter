@@ -11,6 +11,7 @@ namespace WordCounter.Presentation
     {
         private readonly IWordCounterModel wordCounterModel;
         private readonly ITextInputModel textInputModel;
+        private readonly IAboutModel aboutModel;
 
         public ModelConnector(IToolbarModel toolbarModel, IWordCounterModel wordCounterModel, ITextInputModel textInputModel)
         {
@@ -25,5 +26,11 @@ namespace WordCounter.Presentation
             wordCounterModel.SetText(textInputModel.Text);
 
         }
+
+        private void OnAboutButton(object obj, EventArgs e)
+        {
+            //aboutModel.AboutText;
+        }
+
     }
 }
