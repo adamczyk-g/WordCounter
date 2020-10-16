@@ -10,6 +10,9 @@ namespace WordCounter.Presentation.ViewInterfaces
     {
         void SetAboutText(string text);
         void ShowView();
+        void HideView();
         event EventHandler ViewLoad;
+        event EventHandler ViewShown;
+        event EventHandler ViewClose;
     }
 }

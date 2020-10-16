@@ -18,12 +18,18 @@ namespace WordCounter.Presentation
             this.aboutView = aboutView;
             this.aboutModel = aboutModel;
 
-            this.aboutView.ViewLoad += OnViewLoad;
+            this.aboutView.ViewShown += OnViewShow;
+            this.aboutView.ViewClose += OnViewClose;
         }
 
-        private void OnViewLoad(object obje, EventArgs e)
+        private void OnViewShow(object obj, EventArgs e)
         {
             aboutView.SetAboutText(aboutModel.AboutText);
+        }
+
+        private void OnViewClose(object obj, EventArgs e)
+        {
+            aboutView.HideView();
         }
     }
 }
