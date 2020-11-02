@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WordCounter.Model.ModelInterfaces;
+using System.IO;
 
 namespace WordCounter.Model
 {
@@ -16,13 +17,17 @@ namespace WordCounter.Model
 
         }
 
-        public void AskUserForFilePath()
+        public void ReadFileContent(string filePath)
         {
-            throw new NotImplementedException();
+
+            FileContent = File.ReadAllText(filePath);
+
+            FileWasLoaded?.Invoke(this, EventArgs.Empty);
         }
 
-        public string FileContent { get; }
+        public string FileContent { get; private set; }
 
-        public event EventHandler NewFileWasLoaded;
+        //public event EventHandler FileNameRequest;
+        public event EventHandler FileWasLoaded;
     }
 }

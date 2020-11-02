@@ -10,5 +10,6 @@ namespace WordCounter.Presentation.ViewInterfaces
     {
         string GetText();
         event EventHandler TextInputChanged;
+        string Text { get; set; }
     }
 }

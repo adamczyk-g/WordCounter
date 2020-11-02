@@ -24,5 +24,7 @@ namespace WordCounter.WinFormsClient.Views
         {
             return richTextBox1.Text;
         }
+
+        public string Text { get { return richTextBox1.Text; } set { richTextBox1.Text = value; } }
     }
 }

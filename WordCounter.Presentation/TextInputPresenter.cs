@@ -18,14 +18,21 @@ namespace WordCounter.Presentation
             this.textInputView = textInputView;
             this.textInputModel = textInputModel;
 
-            textInputView.TextInputChanged += OnTextChanged;
+            textInputView.TextInputChanged += OnViewTextChanged;
+            textInputModel.TextInputDataChange += OnModelTextChanged;
         }
 
-        private void OnTextChanged(object obj, EventArgs e)
+        private void OnViewTextChanged(object obj, EventArgs e)
         {
-            textInputModel.Text = textInputView.GetText();
+            if (textInputView.Text != textInputModel.Text)
+                textInputModel.Text = textInputView.Text;
         }
 
+        private void OnModelTextChanged(object obj, EventArgs e)
+        {
+            if(textInputView.Text != textInputModel.Text)
+                textInputView.Text = textInputModel.Text;
+        }
 
     }
 }

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutPresenter.cs" />
+    <Compile Include="TextInputLoader.cs" />
     <Compile Include="OpenFilePresenter.cs" />
     <Compile Include="MainPresenter.cs" />
     <Compile Include="ModelConnector.cs" />

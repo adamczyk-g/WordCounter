@@ -52,6 +52,8 @@ namespace WordCounter.WinFormsClient
 
             OpenFileButtonNavigator openFileButtonNavigator = new OpenFileButtonNavigator(toolbarView, openFileModel);
 
+            TextInputLoader textInputLoader = new TextInputLoader(textInputModel, openFileModel);
+
             /*
              * Użytkownik chce załadowac nowy plik do okna wyświetlającego tekst ksiązki
              * Naciska przycisk

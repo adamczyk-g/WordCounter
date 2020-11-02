@@ -21,7 +21,7 @@ namespace WordCounter.Presentation
 
         private void OnOpenFileClick(object obj, EventArgs e)
         {
-            openFileModel.AskUserForFilePath();
+            openFileModel.ReadFileContent(@"D:\ebook.txt");
         }
     }
 }

@@ -14,7 +14,6 @@ namespace WordCounter.WinFormsClient.Views
     public partial class OpenFileView : Form, IOpenFileView
     {
         private OpenFileDialog openFileDialog;
-        private DialogResult result;
 
         public OpenFileView()
         {
@@ -24,7 +23,9 @@ namespace WordCounter.WinFormsClient.Views
 
         public void ShowView()
         {
-            result = openFileDialog.ShowDialog();
+            Result = openFileDialog.ShowDialog();
         }
+
+        public DialogResult Result { get; private set; }
     }
 }

@@ -8,7 +8,8 @@ namespace WordCounter.Model.ModelInterfaces
 {
     public interface IOpenFileModel
     {
-        void AskUserForFilePath();
-        event EventHandler NewFileWasLoaded;
+        void ReadFileContent(string filePath);
+        event EventHandler FileWasLoaded;
+        string FileContent { get; }
     }
 }

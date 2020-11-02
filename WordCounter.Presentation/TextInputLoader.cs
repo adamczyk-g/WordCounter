@@ -8,22 +8,22 @@ using WordCounter.Presentation.ViewInterfaces;
 
 namespace WordCounter.Presentation
 {
-    public class OpenFilePresenter
+    public class TextInputLoader
     {
-        private readonly IOpenFileView fileOpenView;
+        private readonly ITextInputModel textInputModel;
         private readonly IOpenFileModel fileOpenModel;
 
-        public OpenFilePresenter(IOpenFileView fileOpenView, IOpenFileModel fileOpenModel)
+        public TextInputLoader(ITextInputModel textInputModel, IOpenFileModel fileOpenModel)
         {
-            this.fileOpenView = fileOpenView;
+            this.textInputModel = textInputModel;
             this.fileOpenModel = fileOpenModel;
 
-            //fileOpenModel.FileWasLoaded += OnFileLoaded;
+            fileOpenModel.FileWasLoaded += OnFileLoaded;
         }
 
         private void OnFileLoaded(object obj, EventArgs eventArgs)
         {
-
+            textInputModel.Text = fileOpenModel.FileContent;
         }
     }
 }
