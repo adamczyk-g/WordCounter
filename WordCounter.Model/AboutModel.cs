@@ -9,6 +9,6 @@ namespace WordCounter.Model
 {
     public class AboutModel: IAboutModel
     {
-        public string AboutText { get { return "Hello World!!!"; } }
+        public string AboutText { get { return "Something about WordCounter ..."; } }
     }
 }

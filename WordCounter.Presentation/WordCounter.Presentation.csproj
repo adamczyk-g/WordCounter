@@ -42,9 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutPresenter.cs" />
+    <Compile Include="OpenFilePresenter.cs" />
     <Compile Include="MainPresenter.cs" />
     <Compile Include="ModelConnector.cs" />
     <Compile Include="AboutButtonNavigator.cs" />
+    <Compile Include="OpenFileButtonNavigator.cs" />
     <Compile Include="RunButtonNavigator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatusbarPresenter.cs" />
@@ -52,6 +54,7 @@
     <Compile Include="ToolbarPresenter.cs" />
     <Compile Include="ViewInterfaces\IAboutView.cs" />
     <Compile Include="ViewInterfaces\IMainView.cs" />
+    <Compile Include="ViewInterfaces\IOpenFileView.cs" />
     <Compile Include="ViewInterfaces\IStatusBarView.cs" />
     <Compile Include="ViewInterfaces\ITextInputView.cs" />
     <Compile Include="ViewInterfaces\IToolbarView.cs" />

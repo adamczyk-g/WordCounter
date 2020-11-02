@@ -45,6 +45,29 @@ namespace WordCounter.WinFormsClient
             RunButtonNavigator navigation = new RunButtonNavigator(toolbarView, wordCounterModel);
             AboutButtonNavigator aboutButtonNavigator = new AboutButtonNavigator(toolbarView, aboutView);
             ModelConnector modelConnector = new ModelConnector(toolbarModel, wordCounterModel, textInputModel);
+
+            OpenFileView openFileView = new OpenFileView();
+            OpenFileModel openFileModel = new OpenFileModel();
+            OpenFilePresenter openFilePresenter = new OpenFilePresenter(openFileView, openFileModel);
+
+            OpenFileButtonNavigator openFileButtonNavigator = new OpenFileButtonNavigator(toolbarView, openFileModel);
+
+            /*
+             * Użytkownik chce załadowac nowy plik do okna wyświetlającego tekst ksiązki
+             * Naciska przycisk
+             * Pojawia sie okno wyboru pliku
+             * uzytkownik wybiera plik
+             * 
+             * okno zwraca ścieżkę pliku
+             * ścieżka jest przekazywana do ...
+             * ... otwiera plik i czyta zawartość za pomocą pasującego readera
+             * ... generuje zdarzenie załadowano nowy plik
+             * 
+             * okno treści wczytuje nowy plik i generuje zdarzenie że plik został wczytany
+             * 
+             * zawartośc pliku jest ładowana do okna treści
+             */
+
             return mainPresenter;
         }
     }
