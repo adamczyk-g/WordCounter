@@ -8,29 +8,23 @@ using WordCounter.Presentation.ViewInterfaces;
 
 namespace WordCounter.Presentation
 {
-    public class OpenFilePresenter
+    public class FileSelectionPresenter
     {
-        private readonly IOpenFileView fileOpenView;
-        private readonly IOpenFileModel fileOpenModel;
+        private readonly IFileSelectionView fileOpenView;
+        private readonly IFileSelectionModel fileOpenModel;
 
-        public OpenFilePresenter(IOpenFileView fileOpenView, IOpenFileModel fileOpenModel)
+        public FileSelectionPresenter(IFileSelectionView fileOpenView, IFileSelectionModel fileOpenModel)
         {
             this.fileOpenView = fileOpenView;
             this.fileOpenModel = fileOpenModel;
 
-            fileOpenModel.OpenFileError += OnOpenFileError;
             fileOpenModel.FileNameRequest += OnFileNameRequest;
-        }
-
-        private void OnOpenFileError(object obj, EventArgs eventArgs)
-        {
-            fileOpenView.ShowMessageBox(((OpenFileErrorEventArgs)eventArgs).Message);
-        }
+        }        
 
         private void OnFileNameRequest(object obj, EventArgs eventArgs)
         {
             fileOpenView.ShowView();
-            if (fileOpenView.Result)
+            if (fileOpenView.IsFileSelected)
                 fileOpenModel.SetFilePath(fileOpenView.FilePath);
         }
     }

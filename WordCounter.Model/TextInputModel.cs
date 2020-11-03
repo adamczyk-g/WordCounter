@@ -10,9 +10,9 @@ namespace WordCounter.Model
     public class TextInputModel: ITextInputModel
     {
         private string text;
-        private readonly IOpenFileModel openFileModel;
+        private readonly IFileSelectionModel openFileModel;
 
-        public TextInputModel(IOpenFileModel openFileModel)
+        public TextInputModel(IFileSelectionModel openFileModel)
         {
             text = string.Empty;
             this.openFileModel = openFileModel;

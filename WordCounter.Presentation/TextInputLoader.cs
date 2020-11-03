@@ -11,9 +11,9 @@ namespace WordCounter.Presentation
     public class TextInputLoader
     {
         private readonly ITextInputModel textInputModel;
-        private readonly IOpenFileModel fileOpenModel;
+        private readonly IFileSelectionModel fileOpenModel;
 
-        public TextInputLoader(ITextInputModel textInputModel, IOpenFileModel fileOpenModel)
+        public TextInputLoader(ITextInputModel textInputModel, IFileSelectionModel fileOpenModel)
         {
             this.textInputModel = textInputModel;
             this.fileOpenModel = fileOpenModel;

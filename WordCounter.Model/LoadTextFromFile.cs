@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WordCounter.Model.ModelInterfaces;
 using System.IO;
 
 namespace WordCounter.Model
 {
-    public class OpenFileModel : IOpenFileModel
+    public class LoadTextFromFile
     {
+        public LoadTextFromFile() { }
 
-        private IModalDialogBuilder modalDialogBuilder;
-        private string filePath;
-
-        public OpenFileModel(IModalDialogBuilder modalDialogBuilder)
+        public void Load()
         {
-            this.modalDialogBuilder = modalDialogBuilder;
+            //pobierz ścieżkę pliku od użytkownika
+            //spróbuj otworzyć plik
+            //spróbuj przeczytać plik
+            //zwróć zawartość
+
+            //wyświetl błędy
+            //zaloguj błędy
         }
 
-        public void ReadFileContent()
+        private void ReadFileContent(string filePath)
         {
             FileNameRequest.Invoke(this, EventArgs.Empty);
 
@@ -34,15 +37,6 @@ namespace WordCounter.Model
 
         }
 
-        public void SetFilePath(string filePath)
-        {
-            this.filePath = filePath;
-        }
-
         public string FileContent { get; private set; }
-
-        public event EventHandler FileWasLoaded;
-        public event EventHandler OpenFileError;
-        public event EventHandler FileNameRequest;
     }
 }

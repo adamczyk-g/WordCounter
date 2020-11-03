@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WordCounter.Presentation.ViewInterfaces
 {
-    public interface IOpenFileView
+    public interface IFileSelectionView
     {
         void ShowView();
         void ShowMessageBox(string message);
-        bool Result { get; }
+        bool IsFileSelected { get; }
         string FilePath { get; }
     }
 }

@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace WordCounter.Model.ModelInterfaces
 {
-    public interface IOpenFileModel
+    public interface IFileSelectionModel
     {
-        void ReadFileContent();
-        event EventHandler FileWasLoaded;
-        string FileContent { get; }
-        event EventHandler OpenFileError;
+        //void ReadFileContent();
+        //event EventHandler FileWasLoaded;
+        //string FileContent { get; }
+        //event EventHandler OpenFileError;
         event EventHandler FileNameRequest;
-
         void SetFilePath(string filePath);
     }
 }

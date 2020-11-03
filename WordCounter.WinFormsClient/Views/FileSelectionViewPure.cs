@@ -11,20 +11,18 @@ using WordCounter.Presentation.ViewInterfaces;
 
 namespace WordCounter.WinFormsClient.Views
 {
-    public partial class OpenFileView : Form, IOpenFileView
+    public class FileSelectionViewPure : IFileSelectionView//: Form, IFileSelectionView
     {
-        private OpenFileDialog openFileDialog;
-        private DialogResult result;
-
-        public OpenFileView()
+        public FileSelectionViewPure()
         {
-            InitializeComponent();
-            openFileDialog = new OpenFileDialog();
+
         }
 
         public void ShowView()
         {
-            result = openFileDialog.ShowDialog();            
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            IsFileSelected = openFileDialog.ShowDialog() == DialogResult.OK;
+            FilePath = openFileDialog.FileName;
         }
 
         //wyodrębnić do modelu
@@ -33,7 +31,8 @@ namespace WordCounter.WinFormsClient.Views
             MessageBox.Show(message);
         }
 
-        public bool Result { get { return DialogResult.OK == result; } }
-        public string FilePath { get { return openFileDialog.FileName; } }
+        public bool IsFileSelected { get; private set; }
+        public string FilePath { get; private set; }
     }
 }
+

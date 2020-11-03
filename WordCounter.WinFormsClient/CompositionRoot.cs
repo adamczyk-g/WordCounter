@@ -25,13 +25,13 @@ namespace WordCounter.WinFormsClient
             StatusBarView statusBarView = new StatusBarView();
 
             ToolbarModel toolbarModel = new ToolbarModel();
-            ToolbarPresenter toolbarPresenter = new ToolbarPresenter(toolbarView, toolbarModel);
+            //ToolbarPresenter toolbarPresenter = new ToolbarPresenter(toolbarView, toolbarModel);
             
             IModalDialogBuilder modalDialogBuilder = new ModalDialogBuilder();
 
-            OpenFileView openFileView = new OpenFileView();
-            OpenFileModel openFileModel = new OpenFileModel(modalDialogBuilder);
-            OpenFilePresenter openFilePresenter = new OpenFilePresenter(openFileView, openFileModel);
+            FileSelectionView openFileView = new FileSelectionView();
+            FileSelectionModel openFileModel = new FileSelectionModel(modalDialogBuilder);
+            FileSelectionPresenter openFilePresenter = new FileSelectionPresenter(openFileView, openFileModel);
 
             TextInputModel textInputModel = new TextInputModel(openFileModel);
             TextInputPresenter textInputPresenter = new TextInputPresenter(textInputView, textInputModel);
@@ -55,7 +55,7 @@ namespace WordCounter.WinFormsClient
             ModelConnector modelConnector = new ModelConnector(toolbarModel, wordCounterModel, textInputModel);
                        
 
-            OpenFileButtonNavigator openFileButtonNavigator = new OpenFileButtonNavigator(toolbarView, textInputModel);
+            FileSelectionNavigator openFileButtonNavigator = new FileSelectionNavigator(toolbarView, textInputModel);
 
             TextInputLoader textInputLoader = new TextInputLoader(textInputModel, openFileModel);
 

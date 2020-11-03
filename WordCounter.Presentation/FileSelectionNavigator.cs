@@ -8,11 +8,11 @@ using WordCounter.Model.ModelInterfaces;
 
 namespace WordCounter.Presentation
 {
-    public class OpenFileButtonNavigator
+    public class FileSelectionNavigator
     {
         private readonly ITextInputModel textInputModel;
 
-        public OpenFileButtonNavigator(IToolbarView toolbarView, ITextInputModel textInputModel)
+        public FileSelectionNavigator(IToolbarView toolbarView, ITextInputModel textInputModel)
         {
             toolbarView.ButtonOpenFileClick += OnOpenFileClick;
 

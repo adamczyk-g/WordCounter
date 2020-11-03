@@ -43,17 +43,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutModel.cs" />
+    <Compile Include="FileSelectionDisplay.cs" />
+    <Compile Include="LoadTextFromFile.cs" />
     <Compile Include="MainModel.cs" />
     <Compile Include="IModalDialogBuilder.cs" />
     <Compile Include="ModalDialogBuilder.cs" />
     <Compile Include="ModelInterfaces\IAboutModel.cs" />
     <Compile Include="ModelInterfaces\IMainModel.cs" />
-    <Compile Include="ModelInterfaces\IOpenFileModel.cs" />
+    <Compile Include="ModelInterfaces\IFileSelectionModel.cs" />
     <Compile Include="ModelInterfaces\ITextInputModel.cs" />
     <Compile Include="ModelInterfaces\IToolbarModel.cs" />
     <Compile Include="ModelInterfaces\IWordCounterModel.cs" />
     <Compile Include="ModelInterfaces\OpenFileErrorEventArgs.cs" />
-    <Compile Include="OpenFileModel.cs" />
+    <Compile Include="FileSelectionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextInputModel.cs" />
     <Compile Include="ToolbarModel.cs" />
