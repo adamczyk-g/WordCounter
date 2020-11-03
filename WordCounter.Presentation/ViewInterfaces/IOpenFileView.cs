@@ -9,5 +9,8 @@ namespace WordCounter.Presentation.ViewInterfaces
     public interface IOpenFileView
     {
         void ShowView();
+        void ShowMessageBox(string message);
+        bool Result { get; }
+        string FilePath { get; }
     }
 }

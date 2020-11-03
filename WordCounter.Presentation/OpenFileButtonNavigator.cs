@@ -10,18 +10,18 @@ namespace WordCounter.Presentation
 {
     public class OpenFileButtonNavigator
     {
-        private readonly IOpenFileModel openFileModel;
+        private readonly ITextInputModel textInputModel;
 
-        public OpenFileButtonNavigator(IToolbarView toolbarView, IOpenFileModel openFileModel)
+        public OpenFileButtonNavigator(IToolbarView toolbarView, ITextInputModel textInputModel)
         {
             toolbarView.ButtonOpenFileClick += OnOpenFileClick;
 
-            this.openFileModel = openFileModel;
+            this.textInputModel = textInputModel;
         }
 
         private void OnOpenFileClick(object obj, EventArgs e)
         {
-            openFileModel.ReadFileContent(@"D:\ebook.txt");
+            textInputModel.LoadTextFromFile();
         }
     }
 }

@@ -8,26 +8,41 @@ using System.IO;
 
 namespace WordCounter.Model
 {
-    public class OpenFileModel: IOpenFileModel
+    public class OpenFileModel : IOpenFileModel
     {
+
+        private IModalDialogBuilder modalDialogBuilder;
         private string filePath;
 
-        public OpenFileModel()
+        public OpenFileModel(IModalDialogBuilder modalDialogBuilder)
         {
+            this.modalDialogBuilder = modalDialogBuilder;
+        }
+
+        public void ReadFileContent()
+        {
+            FileNameRequest.Invoke(this, EventArgs.Empty);
+
+            try
+            {
+                FileContent = File.ReadAllText(filePath);
+
+                FileWasLoaded?.Invoke(this, EventArgs.Empty);
+            }
+
+            catch (Exception e) { OpenFileError.Invoke(e.Message, new OpenFileErrorEventArgs(e.Message)); };
 
         }
 
-        public void ReadFileContent(string filePath)
+        public void SetFilePath(string filePath)
         {
-
-            FileContent = File.ReadAllText(filePath);
-
-            FileWasLoaded?.Invoke(this, EventArgs.Empty);
+            this.filePath = filePath;
         }
 
         public string FileContent { get; private set; }
 
-        //public event EventHandler FileNameRequest;
         public event EventHandler FileWasLoaded;
+        public event EventHandler OpenFileError;
+        public event EventHandler FileNameRequest;
     }
 }

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace WordCounter.Model.ModelInterfaces
 {
-    public interface ITextProvider
+    public class OpenFileErrorEventArgs: EventArgs
     {
-        string GetText();
+        public OpenFileErrorEventArgs(string message) { Message = message; }
+        public string Message { get; set; }
     }
 }

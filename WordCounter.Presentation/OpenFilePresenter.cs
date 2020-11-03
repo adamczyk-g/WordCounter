@@ -18,12 +18,21 @@ namespace WordCounter.Presentation
             this.fileOpenView = fileOpenView;
             this.fileOpenModel = fileOpenModel;
 
-            //fileOpenModel.FileWasLoaded += OnFileLoaded;
+            fileOpenModel.OpenFileError += OnOpenFileError;
+            fileOpenModel.FileNameRequest += OnFileNameRequest;
         }
 
-        private void OnFileLoaded(object obj, EventArgs eventArgs)
+        private void OnOpenFileError(object obj, EventArgs eventArgs)
         {
+            fileOpenView.ShowMessageBox(((OpenFileErrorEventArgs)eventArgs).Message);
+        }
 
+        private void OnFileNameRequest(object obj, EventArgs eventArgs)
+        {
+            fileOpenView.ShowView();
+            if (fileOpenView.Result)
+                fileOpenModel.SetFilePath(fileOpenView.FilePath);
         }
     }
+
 }

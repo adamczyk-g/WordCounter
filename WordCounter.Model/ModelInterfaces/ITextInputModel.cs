@@ -10,5 +10,6 @@ namespace WordCounter.Model.ModelInterfaces
     {
         event EventHandler TextInputDataChange;
         string Text { get; set; }
+        void LoadTextFromFile();
     }
 }
