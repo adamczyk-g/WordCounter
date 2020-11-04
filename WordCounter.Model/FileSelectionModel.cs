@@ -10,25 +10,20 @@ namespace WordCounter.Model
 {
     public class FileSelectionModel : IFileSelectionModel
     {
-        private IModalDialogBuilder modalDialogBuilder;
         private string filePath;
 
-        public FileSelectionModel(IModalDialogBuilder modalDialogBuilder)
+        public FileSelectionModel()
         {
-            this.modalDialogBuilder = modalDialogBuilder;
+
         }
 
-
-
-        public void SetFilePath(string filePath)
+        public void Display()
         {
-            this.filePath = filePath;
+            DisplayDialogRequest.Invoke(this, EventArgs.Empty);
         }
 
-        public string FileContent { get; private set; }
+        public string FilePath { get { return filePath; } set { filePath = value; } }
 
-        public event EventHandler FileWasLoaded;
-        public event EventHandler OpenFileError;
-        public event EventHandler FileNameRequest;
+        public event EventHandler DisplayDialogRequest;
     }
 }

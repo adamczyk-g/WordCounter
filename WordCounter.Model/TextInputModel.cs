@@ -18,17 +18,8 @@ namespace WordCounter.Model
             this.openFileModel = openFileModel;
         }
 
-        public string Text { get { return text; } set { text = value; TextInputDataChange?.Invoke(this, EventArgs.Empty); } }
+        public string Text { get { return text; } set { text = value; TextInputChange?.Invoke(this, EventArgs.Empty); } }
 
-        public void LoadTextFromFile()
-        {
-            //pobierz ścieżkę pliku od użytkownika
-            openFileModel.ReadFileContent();
-            //spróbuj otworzyć plik
-            //spróbuj przeczytać plik
-            //zwróć zawartość
-        }
-
-        public event EventHandler TextInputDataChange;
+        public event EventHandler TextInputChange;
     }
 }

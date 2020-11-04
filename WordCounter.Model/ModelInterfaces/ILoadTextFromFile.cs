@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace WordCounter.Model.ModelInterfaces
 {
-    public interface IFileSelectionModel
+    public interface ILoadTextFromFile
     {
-        void Display();
-        string FilePath { get; set; }
-        event EventHandler DisplayDialogRequest;
+        void Load();
+        string FileContent { get; }
     }
 }

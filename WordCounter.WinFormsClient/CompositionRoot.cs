@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 using WordCounter.WinFormsClient.Views;
 using WordCounter.Presentation;
+using WordCounter.Presentation.ViewInterfaces;
 using WordCounter.Model;
+using WordCounter.Model.ModelInterfaces;
 
 namespace WordCounter.WinFormsClient
 {
@@ -29,11 +31,12 @@ namespace WordCounter.WinFormsClient
             
             IModalDialogBuilder modalDialogBuilder = new ModalDialogBuilder();
 
-            FileSelectionView openFileView = new FileSelectionView();
-            FileSelectionModel openFileModel = new FileSelectionModel(modalDialogBuilder);
-            FileSelectionPresenter openFilePresenter = new FileSelectionPresenter(openFileView, openFileModel);
+            FileSelectionView fileSelectionView = new FileSelectionView();
+            IFileSelectionView fileSelectionViewPure = new FileSelectionViewPure();
+            FileSelectionModel fileSelectionModel = new FileSelectionModel();
+            FileSelectionPresenter openFilePresenter = new FileSelectionPresenter(fileSelectionView, fileSelectionModel);
 
-            TextInputModel textInputModel = new TextInputModel(openFileModel);
+            TextInputModel textInputModel = new TextInputModel(fileSelectionModel);
             TextInputPresenter textInputPresenter = new TextInputPresenter(textInputView, textInputModel);
 
             WordFrequencyCounter wordFrequencyCounter= new WordFrequencyCounter();
@@ -52,12 +55,15 @@ namespace WordCounter.WinFormsClient
 
             RunButtonNavigator navigation = new RunButtonNavigator(toolbarView, wordCounterModel);
             AboutButtonNavigator aboutButtonNavigator = new AboutButtonNavigator(toolbarView, aboutView);
-            ModelConnector modelConnector = new ModelConnector(toolbarModel, wordCounterModel, textInputModel);
-                       
+            TextSynchronizer modelConnector = new TextSynchronizer(wordCounterModel, textInputModel);
 
-            FileSelectionNavigator openFileButtonNavigator = new FileSelectionNavigator(toolbarView, textInputModel);
+            IFileSelectionDisplay fileSelectionDisplay = new FileSelectionDisplay(fileSelectionModel);
 
-            TextInputLoader textInputLoader = new TextInputLoader(textInputModel, openFileModel);
+            ILoadTextFromFile loadTextFromFile = new LoadTextFromFile(fileSelectionDisplay);
+            LoadTextFromFileToTextInput loadTextFromFileToTextInput = new LoadTextFromFileToTextInput(loadTextFromFile, textInputModel);
+            FileSelectionNavigator openFileButtonNavigator = new FileSelectionNavigator(toolbarView, loadTextFromFileToTextInput);
+
+            TextInputLoader textInputLoader = new TextInputLoader(textInputModel, fileSelectionModel);
 
             /*
              * Użytkownik chce załadowac nowy plik do okna wyświetlającego tekst ksiązki

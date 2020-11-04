@@ -7,30 +7,22 @@ using WordCounter.Model.ModelInterfaces;
 
 namespace WordCounter.Presentation
 {
-    public class ModelConnector
+    public class TextSynchronizer
     {
         private readonly IWordCounterModel wordCounterModel;
         private readonly ITextInputModel textInputModel;
-        private readonly IAboutModel aboutModel;
 
-        public ModelConnector(IToolbarModel toolbarModel, IWordCounterModel wordCounterModel, ITextInputModel textInputModel)
+        public TextSynchronizer(IWordCounterModel wordCounterModel, ITextInputModel textInputModel)
         {
             this.wordCounterModel = wordCounterModel;
             this.textInputModel = textInputModel;
 
-            toolbarModel.ButtonRunClick += OnRunButton;
+            textInputModel.TextInputChange += OnTextInputChange;
         }
 
-        private void OnRunButton(object obj, EventArgs e)
+        private void OnTextInputChange(object obj, EventArgs e)
         {
             wordCounterModel.SetText(textInputModel.Text);
-
         }
-
-        private void OnAboutButton(object obj, EventArgs e)
-        {
-            //aboutModel.AboutText;
-        }
-
     }
 }

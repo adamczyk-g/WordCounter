@@ -19,7 +19,7 @@ namespace WordCounter.Presentation
             this.textInputModel = textInputModel;
 
             textInputView.TextInputChanged += OnViewTextChanged;
-            textInputModel.TextInputDataChange += OnModelTextChanged;
+            textInputModel.TextInputChange += OnModelTextChanged;
         }
 
         private void OnViewTextChanged(object obj, EventArgs e)

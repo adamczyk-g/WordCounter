@@ -18,15 +18,14 @@ namespace WordCounter.Presentation
             this.fileOpenView = fileOpenView;
             this.fileOpenModel = fileOpenModel;
 
-            fileOpenModel.FileNameRequest += OnFileNameRequest;
+            fileOpenModel.DisplayDialogRequest += OnDisplayDialogRequest;
         }        
 
-        private void OnFileNameRequest(object obj, EventArgs eventArgs)
+        private void OnDisplayDialogRequest(object obj, EventArgs eventArgs)
         {
             fileOpenView.ShowView();
             if (fileOpenView.IsFileSelected)
-                fileOpenModel.SetFilePath(fileOpenView.FilePath);
+                fileOpenModel.FilePath = fileOpenView.FilePath;
         }
     }
-
 }

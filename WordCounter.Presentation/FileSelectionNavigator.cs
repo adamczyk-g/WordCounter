@@ -10,18 +10,17 @@ namespace WordCounter.Presentation
 {
     public class FileSelectionNavigator
     {
-        private readonly ITextInputModel textInputModel;
+        LoadTextFromFileToTextInput loadTextFromFileToTextInput;
 
-        public FileSelectionNavigator(IToolbarView toolbarView, ITextInputModel textInputModel)
+        public FileSelectionNavigator(IToolbarView toolbarView, LoadTextFromFileToTextInput loadTextFromFileToTextInput)
         {
             toolbarView.ButtonOpenFileClick += OnOpenFileClick;
-
-            this.textInputModel = textInputModel;
+            this.loadTextFromFileToTextInput = loadTextFromFileToTextInput;
         }
 
         private void OnOpenFileClick(object obj, EventArgs e)
         {
-            textInputModel.LoadTextFromFile();
+            loadTextFromFileToTextInput.Load();
         }
     }
 }

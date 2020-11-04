@@ -8,7 +8,7 @@ using WordCounter.Model.ModelInterfaces;
 
 namespace WordCounter.Model
 {
-    public class FileSelectionDisplay
+    public class FileSelectionDisplay: IFileSelectionDisplay
     {
         private readonly IFileSelectionModel fileSelectionModel;
 
@@ -19,10 +19,10 @@ namespace WordCounter.Model
 
         public void Display()
         {
-            fileSelectionModel.FileNameRequest
+            fileSelectionModel.Display();
         }
 
-        public string FilePath { get; private set; }
+        public string FilePath { get { return fileSelectionModel.FilePath; } }
 
     }
 }

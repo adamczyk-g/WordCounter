@@ -18,12 +18,12 @@ namespace WordCounter.Presentation
             this.textInputModel = textInputModel;
             this.fileOpenModel = fileOpenModel;
 
-            fileOpenModel.FileWasLoaded += OnFileLoaded;
+            //fileOpenModel.FileWasLoaded += OnFileLoaded;
         }
 
         private void OnFileLoaded(object obj, EventArgs eventArgs)
         {
-            textInputModel.Text = fileOpenModel.FileContent;
+            //textInputModel.Text = fileOpenModel.FileContent;
         }
     }
 }

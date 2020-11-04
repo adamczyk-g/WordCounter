@@ -49,6 +49,8 @@
     <Compile Include="IModalDialogBuilder.cs" />
     <Compile Include="ModalDialogBuilder.cs" />
     <Compile Include="ModelInterfaces\IAboutModel.cs" />
+    <Compile Include="ModelInterfaces\IFileSelectionDisplay.cs" />
+    <Compile Include="ModelInterfaces\ILoadTextFromFile.cs" />
     <Compile Include="ModelInterfaces\IMainModel.cs" />
     <Compile Include="ModelInterfaces\IFileSelectionModel.cs" />
     <Compile Include="ModelInterfaces\ITextInputModel.cs" />

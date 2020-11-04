@@ -42,10 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutPresenter.cs" />
+    <Compile Include="LoadTextFromFileToTextInput.cs" />
     <Compile Include="TextInputLoader.cs" />
     <Compile Include="FileSelectionPresenter.cs" />
     <Compile Include="MainPresenter.cs" />
-    <Compile Include="ModelConnector.cs" />
+    <Compile Include="TextSynchronizer.cs" />
     <Compile Include="AboutButtonNavigator.cs" />
     <Compile Include="FileSelectionNavigator.cs" />
     <Compile Include="RunButtonNavigator.cs" />

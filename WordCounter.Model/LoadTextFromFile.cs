@@ -4,37 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using WordCounter.Model.ModelInterfaces;
 
 namespace WordCounter.Model
 {
-    public class LoadTextFromFile
+    public class LoadTextFromFile: ILoadTextFromFile
     {
-        public LoadTextFromFile() { }
+        private readonly IFileSelectionDisplay fileSelectionDisplay;
+
+        public LoadTextFromFile(IFileSelectionDisplay fileSelectionDisplay)
+        {
+            this.fileSelectionDisplay = fileSelectionDisplay;
+        }
 
         public void Load()
         {
-            //pobierz ścieżkę pliku od użytkownika
-            //spróbuj otworzyć plik
-            //spróbuj przeczytać plik
-            //zwróć zawartość
+            fileSelectionDisplay.Display();
+            string filePath = fileSelectionDisplay.FilePath;
+            ReadFileContent(filePath);
 
             //wyświetl błędy
             //zaloguj błędy
         }
 
         private void ReadFileContent(string filePath)
-        {
-            FileNameRequest.Invoke(this, EventArgs.Empty);
-
+        {            
             try
             {
                 FileContent = File.ReadAllText(filePath);
-
-                FileWasLoaded?.Invoke(this, EventArgs.Empty);
             }
 
-            catch (Exception e) { OpenFileError.Invoke(e.Message, new OpenFileErrorEventArgs(e.Message)); };
+            catch (Exception e)
+            {
 
+            };
+            
         }
 
         public string FileContent { get; private set; }

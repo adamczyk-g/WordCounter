@@ -8,8 +8,7 @@ namespace WordCounter.Model.ModelInterfaces
 {
     public interface ITextInputModel
     {
-        event EventHandler TextInputDataChange;
+        event EventHandler TextInputChange;
         string Text { get; set; }
-        void LoadTextFromFile();
     }
 }

@@ -27,7 +27,7 @@ namespace WordCounter.Model
 
         public void SetText(string text)
         {
-            this.text = text;
+            this.text = text;            
         }
 
         public Dictionary<string, int> WordCounterData { get { return wordCounterData; } private set { wordCounterData = value;  WordCounterDataChange.Invoke(this, EventArgs.Empty); } }
