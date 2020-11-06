@@ -11,11 +11,11 @@ using WordCounter.Presentation.ViewInterfaces;
 
 namespace WordCounter.WinFormsClient.Views
 {
-    public partial class FileSelectionView : Form, IFileSelectionView
+    public class FileSelectionView : IFileSelectionView
     {
         public FileSelectionView()
         {
-            InitializeComponent();
+
         }
 
         public void ShowView()
@@ -35,3 +35,4 @@ namespace WordCounter.WinFormsClient.Views
         public string FilePath { get; private set; }
     }
 }
+

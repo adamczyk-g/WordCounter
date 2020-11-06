@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AboutPresenter.cs" />
     <Compile Include="LoadTextFromFileToTextInput.cs" />
+    <Compile Include="MessageShowViewPresenter.cs" />
     <Compile Include="TextInputLoader.cs" />
     <Compile Include="FileSelectionPresenter.cs" />
     <Compile Include="MainPresenter.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="ViewInterfaces\IAboutView.cs" />
     <Compile Include="ViewInterfaces\IMainView.cs" />
     <Compile Include="ViewInterfaces\IFileSelectionView.cs" />
+    <Compile Include="ViewInterfaces\IMessageShowView.cs" />
     <Compile Include="ViewInterfaces\IStatusBarView.cs" />
     <Compile Include="ViewInterfaces\ITextInputView.cs" />
     <Compile Include="ViewInterfaces\IToolbarView.cs" />

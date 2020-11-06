@@ -31,8 +31,7 @@ namespace WordCounter.WinFormsClient
             
             IModalDialogBuilder modalDialogBuilder = new ModalDialogBuilder();
 
-            FileSelectionView fileSelectionView = new FileSelectionView();
-            IFileSelectionView fileSelectionViewPure = new FileSelectionViewPure();
+            IFileSelectionView fileSelectionView = new FileSelectionView();
             FileSelectionModel fileSelectionModel = new FileSelectionModel();
             FileSelectionPresenter openFilePresenter = new FileSelectionPresenter(fileSelectionView, fileSelectionModel);
 
@@ -66,20 +65,9 @@ namespace WordCounter.WinFormsClient
             TextInputLoader textInputLoader = new TextInputLoader(textInputModel, fileSelectionModel);
 
             /*
-             * Użytkownik chce załadowac nowy plik do okna wyświetlającego tekst ksiązki
-             * Naciska przycisk
-             * Pojawia sie okno wyboru pliku
-             * uzytkownik wybiera plik
-             * 
-             * okno zwraca ścieżkę pliku
-             * ścieżka jest przekazywana do ...
-             * ... otwiera plik i czyta zawartość za pomocą pasującego readera
-             * ... generuje zdarzenie załadowano nowy plik
-             * 
-             * okno treści wczytuje nowy plik i generuje zdarzenie że plik został wczytany
-             * 
-             * zawartośc pliku jest ładowana do okna treści
-             */
+             * Wyświetlanie MsgBox
+             * Obsługa błędów otwarcia pliku
+             */ 
 
             return mainPresenter;
         }
